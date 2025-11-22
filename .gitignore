@@ -1,0 +1,13 @@
+# Shell and CSV project .gitignore
+*.log
+*.tmp
+*~
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+*.csv.summary
+output/
+archive/
+files/
+# End

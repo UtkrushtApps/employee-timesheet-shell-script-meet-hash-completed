@@ -1,0 +1,13 @@
+EmployeeID,Date,HoursWorked,ProjectName
+E001,2024-04-08,8,InventoryApp
+E002,2024-04-08,7,WebPortal
+E001,2024-04-09,9,InventoryApp
+E003,2024-04-10,5,MobileApp
+E001,2024-04-10,10,InventoryApp
+E002,2024-04-11,8,WebPortal
+E002,2024-04-12,8,WebPortal
+E003,2024-04-12,6,MobileApp
+E001,2024-04-13,8,DataSync
+E003,2024-04-13,9,MobileApp
+INVALID LINE WITHOUT ENOUGH FIELDS
+E002,2024-04-13,5,WebPortal
