@@ -30,10 +30,49 @@ print_warning() {
     echo -e "${YELLOW}WARNING: $1${NC}"
 }
 
+# Function to show usage
+show_usage() {
+    cat << EOF
+Employee Timesheet Processing Script
+
+USAGE:
+    $0 <timesheet.csv>
+
+DESCRIPTION:
+    Processes employee timesheet data from a CSV file and generates a summary report.
+    
+    The CSV file must have the following header:
+        EmployeeID,Date,HoursWorked,ProjectName
+    
+    The script will:
+    - Calculate total hours worked per employee
+    - Identify employees who worked more than 40 hours
+    - Determine which project received the most working hours
+    - Handle and report malformed lines
+    - Display results in a formatted table
+
+EXAMPLES:
+    $0 data/timesheet_sample.csv
+    $0 /path/to/timesheet.csv
+
+EXIT CODES:
+    0 - Success
+    1 - Error (missing file, invalid data, etc.)
+
+EOF
+}
+
+# Check for help flag
+if [ "$INPUT_FILE" = "-h" ] || [ "$INPUT_FILE" = "--help" ]; then
+    show_usage
+    exit 0
+fi
+
 # Validate input arguments
 if [ -z "$INPUT_FILE" ]; then
     print_error "No input file specified"
     echo "Usage: $0 <timesheet.csv>"
+    echo "For more information, use: $0 --help"
     exit 1
 fi
 
